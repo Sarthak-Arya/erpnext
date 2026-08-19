@@ -1,0 +1,26 @@
+# Server-specific override: attach only the ERPNext frontend to the existing
+# Caddy `proxy` network. Do not create Caddy, Traefik, or Cloudflare Tunnel.
+#
+# Default Compose network is renamed to `erpnext` so every service in this
+# project is isolated from FlipCore and infra stacks. Caddy stays off `erpnext`.
+
+services:
+  frontend:
+    container_name: erpnext-frontend
+    networks:
+      default: {}
+      proxy: {}
+    healthcheck:
+      test: ["CMD", "wait-for-it", "-t", "5", "127.0.0.1:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+networks:
+  default:
+    name: erpnext
+    driver: bridge
+  proxy:
+    name: proxy
+    external: true

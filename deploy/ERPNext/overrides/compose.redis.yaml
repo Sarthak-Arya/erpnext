@@ -1,0 +1,36 @@
+# Official Frappe Docker Redis override, with healthchecks required for depends_on.
+# redis-cache is ephemeral (official). redis-queue is persisted (official).
+# No host port publish.
+services:
+  configurator:
+    environment:
+      REDIS_CACHE: redis-cache:6379
+      REDIS_QUEUE: redis-queue:6379
+    depends_on:
+      redis-cache:
+        condition: service_healthy
+      redis-queue:
+        condition: service_healthy
+
+  redis-cache:
+    image: redis:8.6-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis-queue:
+    image: redis:8.6-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    volumes:
+      - redis-queue-data:/data
+
+volumes:
+  redis-queue-data:

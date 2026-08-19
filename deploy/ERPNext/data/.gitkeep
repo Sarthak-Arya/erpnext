@@ -1,0 +1,3 @@
+# Optional host directory for backup dumps (`bench backup`, mariadb dumps).
+# Live MariaDB/sites/redis-queue data uses official named Docker volumes:
+#   erpnext_db-data, erpnext_sites, erpnext_logs, erpnext_redis-queue-data
