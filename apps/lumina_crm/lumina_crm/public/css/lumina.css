@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap");
+
+/* Lumina CRM — Stitch-inspired tokens
+   Source: https://stitch.withgoogle.com/projects/730677817410725050
+   The Stitch project is not publicly shared, so these tokens follow a
+   luminous CRM system: warm paper canvas, deep ink sidebar, electric blue
+   primary, and gold highlight. */
+:root {
+	--lumina-canvas: #f3f1ec;
+	--lumina-surface: #ffffff;
+	--lumina-ink: #0b1220;
+	--lumina-ink-soft: #3d4554;
+	--lumina-muted: #6b7280;
+	--lumina-line: #e4e0d8;
+	--lumina-primary: #2a6bff;
+	--lumina-primary-hover: #1b54db;
+	--lumina-primary-soft: #e8efff;
+	--lumina-gold: #e8b931;
+	--lumina-gold-soft: #fff6d9;
+	--lumina-success: #0f9d73;
+	--lumina-danger: #e23d3d;
+	--lumina-radius: 12px;
+	--lumina-radius-sm: 8px;
+	--lumina-shadow: 0 10px 28px rgba(11, 18, 32, 0.07);
+	--lumina-font: "Inter", "Segoe UI", sans-serif;
+	--lumina-display: "Manrope", "Inter", sans-serif;
+}
+
+html,
+html[data-theme="light"] {
+	--font-stack: var(--lumina-font);
+	--primary: var(--lumina-primary);
+	--primary-color: var(--lumina-primary);
+	--primary-fg: #ffffff;
+	--bg-color: var(--lumina-canvas);
+	--fg-color: var(--lumina-surface);
+	--subtle-fg: #ece9e2;
+	--subtle-accent: #e4e0d8;
+	--navbar-bg: var(--lumina-surface);
+	--border-color: var(--lumina-line);
+	--heading-color: var(--lumina-ink);
+	--text-color: var(--lumina-ink);
+	--text-muted: var(--lumina-muted);
+	--text-light: #8a919c;
+	--control-bg: #eeece6;
+	--control-bg-on-gray: #e4e0d8;
+	--disabled-control-bg: #f7f5f1;
+	--awesomplete-hover-bg: var(--lumina-primary-soft);
+	--icon-stroke: var(--lumina-ink);
+	--alert-bg: #eeece6;
+	--bg-blue: var(--lumina-primary-soft);
+	--bg-light-blue: #f3f6ff;
+	--blue-500: var(--lumina-primary);
+	--blue-600: var(--lumina-primary-hover);
+	--shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.05);
+	--shadow-base: var(--lumina-shadow);
+	--shadow-md: 0 12px 32px rgba(11, 18, 32, 0.1);
+}
+
+html,
+body,
+.page-container,
+.layout-main {
+	font-family: var(--lumina-font) !important;
+	background: var(--lumina-canvas) !important;
+	color: var(--lumina-ink);
+}
+
+h1,
+h2,
+h3,
+.page-title,
+.navbar-brand,
+.desk-sidebar .standard-sidebar-label {
+	font-family: var(--lumina-display) !important;
+	letter-spacing: -0.02em;
+}
+
+.navbar {
+	background: var(--lumina-surface) !important;
+	border-bottom: 1px solid var(--lumina-line) !important;
+	box-shadow: none !important;
+}
+
+.navbar .navbar-brand,
+.navbar-home {
+	font-weight: 700;
+	color: var(--lumina-ink) !important;
+}
+
+.btn-primary,
+.btn-primary:not(:disabled):not(.disabled):active {
+	background: var(--lumina-primary) !important;
+	border-color: var(--lumina-primary) !important;
+	color: #fff !important;
+	border-radius: 999px !important;
+	font-weight: 600;
+	box-shadow: 0 8px 18px rgba(42, 107, 255, 0.22);
+}
+
+.btn-primary:hover {
+	background: var(--lumina-primary-hover) !important;
+	border-color: var(--lumina-primary-hover) !important;
+}
+
+.btn-default,
+.btn-secondary,
+.btn {
+	border-radius: var(--lumina-radius-sm) !important;
+}
+
+.page-head,
+.form-tabs-list,
+.layout-side-section,
+.list-row-head,
+.widget,
+.frappe-card,
+.desk-page .widget,
+.codex-editor,
+.comment-box,
+.form-control,
+.input-with-feedback,
+select.form-control,
+.awesomplete > ul {
+	border-radius: var(--lumina-radius) !important;
+}
+
+.widget,
+.frappe-card,
+.desk-page .widget,
+.layout-main-section {
+	background: var(--lumina-surface) !important;
+	border: 1px solid var(--lumina-line) !important;
+	box-shadow: var(--lumina-shadow);
+}
+
+.desk-sidebar,
+.layout-side-section,
+.body.full-width .layout-side-section {
+	background: var(--lumina-ink) !important;
+	color: #e8ecf4 !important;
+	border-right: 0 !important;
+}
+
+.desk-sidebar .standard-sidebar-item,
+.desk-sidebar .item-anchor,
+.layout-side-section a,
+.layout-side-section .sidebar-item-label {
+	color: #c9d1de !important;
+}
+
+.desk-sidebar .standard-sidebar-item.selected,
+.desk-sidebar .standard-sidebar-item:hover,
+.layout-side-section .sidebar-item-container.active {
+	background: rgba(42, 107, 255, 0.22) !important;
+	border-radius: 10px;
+}
+
+.desk-sidebar .standard-sidebar-item.selected a,
+.desk-sidebar .standard-sidebar-item.selected .sidebar-item-label {
+	color: #ffffff !important;
+}
+
+.page-form,
+.search-bar,
+.form-control,
+.input-with-feedback {
+	background: #eeece6 !important;
+	border-color: var(--lumina-line) !important;
+	border-radius: var(--lumina-radius-sm) !important;
+}
+
+.indicator-pill,
+.indicator-pill.blue,
+.indicator-pill-right.blue {
+	background: var(--lumina-primary-soft) !important;
+	color: var(--lumina-primary-hover) !important;
+}
+
+.indicator-pill.green {
+	background: #e5f7f1 !important;
+	color: var(--lumina-success) !important;
+}
+
+.indicator-pill.orange,
+.indicator-pill.yellow {
+	background: var(--lumina-gold-soft) !important;
+	color: #8a6a08 !important;
+}
+
+.list-row:hover,
+.list-row-container:hover .list-row {
+	background: var(--lumina-primary-soft) !important;
+}
+
+.modal-content,
+.dialog .modal-content {
+	border-radius: 16px !important;
+	border: 1px solid var(--lumina-line);
+	box-shadow: var(--lumina-shadow);
+}
+
+/* Login / website */
+.for-login,
+.page_content,
+.web-page-wrapper,
+.website-doc {
+	background: var(--lumina-canvas) !important;
+	font-family: var(--lumina-font);
+}
+
+.login-content.page-card,
+.page-card,
+.hero-and-content .page-card {
+	border-radius: 20px !important;
+	border: 1px solid var(--lumina-line) !important;
+	box-shadow: var(--lumina-shadow) !important;
+	overflow: hidden;
+}
+
+.login-content .page-card-head,
+.page-card-head {
+	font-family: var(--lumina-display) !important;
+	font-weight: 800;
+	color: var(--lumina-ink);
+}
+
+.for-login .btn-primary,
+.login-content .btn-primary,
+.login-content button.btn,
+.btn-login,
+.page-card .btn.btn-primary {
+	background: var(--lumina-primary) !important;
+	border-color: var(--lumina-primary) !important;
+	color: #fff !important;
+	border-radius: 999px !important;
+	font-weight: 600;
+	box-shadow: 0 8px 18px rgba(42, 107, 255, 0.22);
+}
+
+.sign-up-message,
+.login-content .form-signin .form-control {
+	border-radius: 10px !important;
+}
+
+.web-footer {
+	background: var(--lumina-ink) !important;
+	color: #c9d1de !important;
+}
+
+.navbar-light {
+	background: var(--lumina-surface) !important;
+}
+
+.flipswitch-copyright {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+	padding: 10px 16px 14px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: var(--lumina-muted);
+	pointer-events: none;
+}
+
+.for-login .flipswitch-copyright,
+.web-page .flipswitch-copyright {
+	position: relative;
+	padding-top: 24px;
+}

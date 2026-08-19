@@ -1,0 +1,14 @@
+# Lumina CRM theme on top of the official ERPNext image.
+# CSS/JS are compiled into the image asset layer (do not bench-build at runtime).
+ARG ERPNEXT_VERSION=v16.32.3
+FROM frappe/erpnext:${ERPNEXT_VERSION}
+
+USER frappe
+WORKDIR /home/frappe/frappe-bench
+
+COPY --chown=frappe:frappe apps/lumina_crm /home/frappe/frappe-bench/apps/lumina_crm
+
+RUN ln -sfn /home/frappe/frappe-bench/assets /home/frappe/frappe-bench/sites/assets \
+	&& ./env/bin/pip install --quiet -e apps/lumina_crm \
+	&& (grep -qxF lumina_crm sites/apps.txt || printf '\nlumina_crm\n' >> sites/apps.txt) \
+	&& bench build --app lumina_crm
